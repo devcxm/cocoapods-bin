@@ -6,6 +6,11 @@ require 'cocoapods-bin/config/config'
 module Pod
   class Source
     class Manager
+      # 默认 source
+      def default_source
+        source_with_name_or_url(CBin.config.default_repo_url)
+      end
+
       # 源码 source
       def code_source
         source_with_name_or_url(CBin.config.code_repo_url)
